@@ -45,6 +45,11 @@ class OfferListAdapter : RecyclerView.Adapter<OfferListAdapter.ViewHolder>() {
 
         private val context = binding.root.context
 
+        private fun getTimeFormat(minutes: Long): Pair<Int, Int> = Pair(
+            first = (minutes / 60).toInt(),
+            second = (minutes % 60).toInt()
+        )
+
         fun bind(offer: Offer) {
             val flight = offer.flight
 
